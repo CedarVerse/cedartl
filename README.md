@@ -20,6 +20,7 @@ making it perfect for interactive development sessions.
 - [Syntax](#syntax)
     - [Basic syntax](#basic-syntax)
     - [FolderDict control](#folderdict-control)
+    - [Template management](#template-management)
     - [LLM Control](#llm-control)
 - [FolderDict](#folderdict)
 - [Quick Start](#quick-start)
@@ -67,6 +68,8 @@ To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 - `\%cd(<path-spec-1> <path-spec-2>...)`: Change the current data source from where template keys and values are read
 - `\%pwd`: Print current working data source
 - `\%ls`: List contents of current working data source
+
+### Template management:
 - `\%set(key="value")`: Set volatile template value
 - `\%get(key)`: Get the value associated with a key
 - `\%saveas(<target-path>)`: Save the current template to a folder
