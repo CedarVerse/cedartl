@@ -34,7 +34,7 @@ It can save you time when writing your prompts.
 Frequently-used pieces of text can be stored in named _templates_.
 Then, instead of typing the same text over and over, you just put a reference to the named template.
 
-- [**Templating via folders**](#folderdict): Frequently used prompts are stored as text files _grouped in a folder_
+- [**Templating via folders**](#folderdict): Frequently used prompts are stored as text files _grouped in a `context folder`_
 - **Intuitive References**: Access templates using simple `\name` syntax
 
 ### For LLM Users:
