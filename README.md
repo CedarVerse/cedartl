@@ -19,6 +19,7 @@ making it perfect for interactive development sessions.
 - [Key Features](#key-features)
 - [Syntax](#syntax)
     - [Basic syntax](#basic-syntax)
+    - [FolderDict control](#folderdict-control)
     - [LLM Control](#llm-control)
 - [FolderDict](#folderdict)
 - [Quick Start](#quick-start)
@@ -60,7 +61,16 @@ To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 ### Basic syntax:
 - `\name`: Key lookup.
 - `\path/to/key`: Nested Key lookup
-- `\!(shell commands)`: Shell escape hatch
+
+### FolderDict control:
+- `\..`: Move up one level in the data source hierarchy
+- `\%cd(<path-spec-1> <path-spec-2>...)`: Change the current data source from where template keys and values are read
+- `\%pwd`: Print current working data source
+- `\%ls`: List available keys
+- `\%set(key="value")`: Set volatile template value
+- `\%get(key)`: Get the value associated with a key
+- `\%saveas(<target-path>)`: Save the current template to a folder
+- `\%load(<path>)`: Load template into volatile area
 
 ### LLM Control
 - `\*chat(some text)`: LLM chat (starts a separate LLM session)
