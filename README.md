@@ -19,7 +19,7 @@ making it perfect for interactive development sessions.
 - [Key Features](#key-features)
 - [Syntax](#syntax)
     - [Basic syntax](#basic-syntax)
-    - [FolderDict control](#folderdict-control)
+    - [FolderDict context folder control](#folderdict-context-folder-control)
     - [Template management](#template-management)
     - [LLM Control](#llm-control)
 - [FolderDict](#folderdict)
@@ -31,10 +31,10 @@ making it perfect for interactive development sessions.
 ## Why should I use it?
 It can save you time when writing your prompts.
 
-Frequently-used pieces of text can be stored in named _variables_ or _templates_.
+Frequently-used pieces of text can be stored in named _templates_.
 Then, instead of typing the same text over and over, you just put a reference to the named template.
 
-- **[Templating via folders](#folderdict)**: Store frequently used prompts as text files _grouped in a folder_
+- [**Templating via folders**](#folderdict): Frequently used prompts are stored as text files _grouped in a folder_
 - **Intuitive References**: Access templates using simple `\name` syntax
 
 ### For LLM Users:
@@ -50,7 +50,8 @@ See the [quick start](#quick-start) section if you want to support `CedarTL` in 
 3. 🔄 **Recursive Processing**: It can process templates within templates, allowing for nested template structures
 4. 🔗 **Hierarchical** key access and function calls
 5. 📁 Smart Folder-based templating through `FolderDict`
-    - Structure your templates logically in directories (accessing local directories, tar/zip files, and remote servers via WebDAV, HTTP, FTP, etc)
+    - Structure your templates logically in different `context folders` (accessing local directories, tar/zip files, and remote servers via WebDAV, HTTP, FTP, etc)
+    - Easy to switch between different contexts (See `\%cd`)
 6. 🖥️ Shell command Integration
 
 You provide the `CedarTL` runtime a _root context_: a `dict`, a `list`, an object, or a [`FolderDict`](#folderdict)
@@ -63,11 +64,11 @@ To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 - `\name`: Key lookup.
 - `\path/to/key`: Nested Key lookup
 
-### FolderDict control:
-- `\..`: Move up one level in the data source hierarchy
-- `\%cd(<path-spec-1> <path-spec-2>...)`: Change the current data source from where template keys and values are read
-- `\%pwd`: Print current working data source
-- `\%ls`: List contents of current working data source
+### FolderDict context folder control:
+- `\..`: Move up one level in the context hierarchy
+- `\%cd(<path-spec-1> <path-spec-2>...)`: Change the current `context folder` from where template keys and values are read
+- `\%pwd`: Print current working context folder
+- `\%ls`: List contents of current working context folder
 
 ### Template management:
 - `\%set(key="value")`: Set volatile template value
@@ -82,11 +83,11 @@ To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 ... more to come
 
 ## FolderDict
-A `FolderDict` is simply a way to view a folder as if it were a `dict` (that is, a mapping between keys and values).
+A `FolderDict` is simply a way to view a folder (the `context folder`) as if it were a `dict` (that is, a mapping between keys and values).
 In `Python`, it's compatible with type `dict[str, str]`.
 
-Example: Inside a `resources` folder, we've added a folder named `templates`. We want to view this folder as a `dict`,
-so we point a `FolderDict` to that `templates` folder:
+Example: Inside a `resources` folder, we've added a folder named `templates` to hold different context folders. We want to view the `main` context folder as a `dict`,
+so we point a `FolderDict` to that `main` folder:
 
 ```text
 resources/
