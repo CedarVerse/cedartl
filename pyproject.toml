@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "Minimally intrusive templating language thought for interactive use in LLM chats"
 authors = [{ name = "Elifarley", email = "cedarscript@orgecc.com" }]
 readme = "README.md"
-license = {text = "MIT"}
+license = {text = "AGPL-3.0"}
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
