@@ -1,17 +1,21 @@
 # CedarTL
+A lightweight, intuitive templating language designed for interactive use in LLM chat sessions.
 
 [![PyPI version](https://badge.fury.io/py/cedartl.svg)](https://pypi.org/project/cedartl/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/cedartl.svg)](https://pypi.org/project/cedartl/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A minimally-intrusive templating language thought for interactive use in LLM chats
+## Overview
 
-CedarTL is a recursive, minimally-intrusive templating language tailored to interactive use, like in an LLM chat session.
-It's got a straightforward syntax that's easy to grasp.
+CedarTL is a non-intrusive, recursive templating language that seamlessly integrates with LLM chat sessions.
+Its simple syntax minimizes cognitive overhead while maximizing speed,
+making it perfect for interactive development sessions.
 
 ## Table of Contents
 - [Why should I use it?](#why-should-i-use-it)
+    - [For LLM Users](#for-llm-users)
+    - [For AI Code Assistant / IDE Developers](#for-ai-code-assistant--ide-developers)
 - [Key Features](#key-features)
 - [Syntax](#syntax)
     - [Basic syntax](#basic-syntax)
@@ -28,16 +32,24 @@ It can save you time when writing your prompts.
 Frequently-used pieces of text can be stored in named _variables_ or _templates_.
 Then, instead of typing the same text over and over, you just put a reference to the named template.
 
-See the [concrete example](#concrete-example).
+- Template Reusability: Store frequently used prompts as named templates
+- Intuitive References: Access templates using simple `\name` syntax
+
+### For LLM Users:
+See the [concrete example](#concrete-example) to see how easy the syntax is.
+
+### For AI Code Assistant / IDE Developers:
+See the [quick start](#quick-start) section if you want to support `CedarTL` in your product
 
 ## Key Features:
-1. **Minimal syntax overhead**: The syntax is designed to blend naturally with the target text, minimizing typing overhead
-2. **Recursive**: It can process templates within templates, allowing for nested template structures
-3. **Hierarchical** key access and function calls
-4. **Directory-based** templating through `FolderDict` (accessing local directories, tar/zip files, and remote servers 
-via WebDAV, HTTP, FTP, etc)
-5. **Direct shell** command integration
-6. **LLM integration**
+1. 🚀 Minimal Syntax: Clean, intuitive syntax that feels natural
+   - Designed to blend naturally with the target text, minimizing typing overhead
+2. 🤖 **LLM-Optimized**: Built specifically for LLM interactions
+3. 🔄 **Recursive Processing**: It can process templates within templates, allowing for nested template structures
+4. 🔗 **Hierarchical** key access and function calls
+5. 📁 Smart Folder-based templating through `FolderDict`
+    - Structure your templates logically in directories (accessing local directories, tar/zip files, and remote servers via WebDAV, HTTP, FTP, etc)
+6. 🖥️ Shell command Integration
 
 You provide the `CedarTL` runtime a _root context_: a `dict`, a `list`, an object, or a [`FolderDict`](#folderdict)
 (a path to a directory where its contained files are the keys, and the file contents are the values)
@@ -160,7 +172,16 @@ Step-by-Step Response:
 ```
 
 <details>
-<summary>Actual screenshot</summary>
+<summary>Actual chat session screenshot</summary>
 
 ![img.png](img.png)
 </details>
+
+## Contributing
+We welcome contributions! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
