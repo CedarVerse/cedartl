@@ -66,7 +66,7 @@ To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 - `\..`: Move up one level in the data source hierarchy
 - `\%cd(<path-spec-1> <path-spec-2>...)`: Change the current data source from where template keys and values are read
 - `\%pwd`: Print current working data source
-- `\%ls`: List available keys
+- `\%ls`: List contents of current working data source
 - `\%set(key="value")`: Set volatile template value
 - `\%get(key)`: Get the value associated with a key
 - `\%saveas(<target-path>)`: Save the current template to a folder
