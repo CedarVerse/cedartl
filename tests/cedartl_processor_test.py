@@ -161,13 +161,13 @@ def test_process_multiple_templates(processor):
 def test_process_nonexistent_template(processor):
     """Test processing with non-existent template"""
     result = processor.process(r"Hello AB\nonexistent!")
-    assert result == r"Hello AB\nonexistent!"
+    assert result == r"Hello AB(\nonexistent: recursion aborted)!"
 
 
 def test_process_recursive_template(processor):
     """Test handling of recursive templates"""
     result = processor.process(r"AB\recursive.")
-    assert result == r"AB\recursive."  # Should prevent infinite recursion
+    assert result == r"AB(\recursive: recursion aborted)."  # Should prevent infinite recursion
 
 
 def test_invalid_template_name(processor):
@@ -180,7 +180,7 @@ def test_invalid_template_name(processor):
     (r"\user", "John"),
     (r"Hello \user!", "Hello John!"),
     (r"\header \footer", "Welcome John! Goodbye John!"),
-    (r"\nonexistent", r"\nonexistent"),
+    (r"\nonexistent", r"(\nonexistent: recursion aborted)"),
     ("", ""),
 ])
 def test_process_parametrized(processor, template_text, expected):

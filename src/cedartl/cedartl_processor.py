@@ -47,11 +47,11 @@ class CedarTLProcessor:
         def replace_template(match: Match) -> str:
             prev, template_name = match.groups()
             if template_name in self._processing_stack:
-                return f"{prev}\\{template_name}"  # Break recursion by returning original command
+                return f"{prev}(\\{template_name}: recursion aborted)"  # Break recursion by returning original command
 
             self._processing_stack.add(template_name)
             template_content = self.load_template(template_name)
-            print(f'[replace_template] {template_name}: {template_content}')
+            print(f'\\{template_name}: {template_content.strip()}')
             result = self.process(prev + template_content)
             self._processing_stack.remove(template_name)
             return result
