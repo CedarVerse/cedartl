@@ -52,6 +52,7 @@ See the [quick start](#quick-start) section if you want to support `CedarTL` in 
 5. 📁 Smart Folder-based templating through `FolderDict`
     - Structure your templates logically in different `context folders` (accessing local directories, tar/zip files, and remote servers via WebDAV, HTTP, FTP, etc)
     - Easy to switch between different contexts (See `\%cd`)
+    - Multiple contexts can be layered (using _most-recent-wins_ strategy)
 6. 🖥️ Shell command Integration
 
 You provide the `CedarTL` runtime a _root context_: a `dict`, a `list`, an object, or a [`FolderDict`](#folderdict)
