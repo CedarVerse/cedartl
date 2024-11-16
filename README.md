@@ -4,7 +4,9 @@ A lightweight, intuitive templating language designed for interactive use in LLM
 [![PyPI version](https://badge.fury.io/py/cedartl.svg)](https://pypi.org/project/cedartl/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/cedartl.svg)](https://pypi.org/project/cedartl/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+
 
 ## Overview
 
