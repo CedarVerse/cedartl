@@ -19,12 +19,12 @@ You provide the `CedarTL` runtime a _root context_: a `dict`, a `list`, an objec
 To escape to `CedarTL` syntax, you type a backslash and then a symbol. Examples:
 
 ### Basic syntax:
-`\name`: Key lookup.
-`\path/to/key`: Nested Key lookup
-`\!(shell commands)`: Shell escape hatch
+- `\name`: Key lookup.
+- `\path/to/key`: Nested Key lookup
+- `\!(shell commands)`: Shell escape hatch
 
 ### LLM Control
-`\*chat(some text)`: LLM chat (starts a separate LLM session)
-`\*temp(<float>)`: LLM temperature control
+- `\*chat(some text)`: LLM chat (starts a separate LLM session)
+- `\*temp(<float>)`: LLM temperature control
 
 ... more to come
