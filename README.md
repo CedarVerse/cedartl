@@ -32,8 +32,8 @@ It can save you time when writing your prompts.
 Frequently-used pieces of text can be stored in named _variables_ or _templates_.
 Then, instead of typing the same text over and over, you just put a reference to the named template.
 
-- Template Reusability: Store frequently used prompts as named templates
-- Intuitive References: Access templates using simple `\name` syntax
+- **[Templating via folders](#folderdict)**: Store frequently used prompts as text files _grouped in a folder_
+- **Intuitive References**: Access templates using simple `\name` syntax
 
 ### For LLM Users:
 See the [concrete example](#concrete-example) to see how easy the syntax is.
@@ -96,6 +96,11 @@ However, all names above are arbitrary: `FolderDict` will work regardless of the
 
 And where are the values for the keys?
 Yes, the file _contents_ are the values for their corresponding keys.
+
+By storing templates in a `FolderDict`, we get some advantages:
+- Each folder can have specialized prompts for a specific type of task
+- It's easier to share your template folder with the community (just zip it)
+- It's easier to version-control a template folder
 
 ## Quick Start
 
