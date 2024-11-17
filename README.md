@@ -29,6 +29,8 @@ making it perfect for interactive development sessions.
 - [Concrete Example](#concrete-example)
     - [Context](#context)
     - [Chat Session](#chat-session-in-cedarml-format)
+- [What's Next?](#whats-next)
+- [Contributing](#contributing)
 
 ## Why should I use it?
 It can save you time when writing your prompts.
@@ -199,8 +201,36 @@ Step-by-Step Response:
 ![img.png](img.png)
 </details>
 
+## What's Next?
+
+Here's what's on the horizon for `CedarTL`:
+
+- **Browser Extension**
+    - Cross-platform extension for seamless template access in any web text input
+    - Support for popular platforms:
+        - LLM web interfaces ([Kagi Assistant](https://kagi.com/assistant), ChatGPT, Claude, OpenRouter, etc.)
+        - Messaging apps (WhatsApp Web, Google Chat)
+        - Online text editors
+        - Social media platforms like Facebook, Instagram
+    - Features:
+        - Local template storage and management
+        - Secure sync across devices
+        - Template preview on hover
+        - Context-aware template auto-complete
+        - Integration with browser's autofill system
+        - Smart template generation from frequently typed text
+
+- **Core Enhancements**
+    - Template sharing ecosystem
+    - More backend storage options (databases, cloud storage)
+    - Better template versioning
+
+- **Integration APIs**
+    - SDK for easy integration into other applications
+
+
 ## Contributing
-We welcome contributions! Here's how you can help:
+Want to contribute? Check out our [GitHub issues](https://github.com/YourRepo/CedarTL/issues) or propose new features!
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)

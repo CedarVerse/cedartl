@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cedartl"
 dynamic = ["version"]
-description = "Minimally intrusive templating language thought for interactive use in LLM chats"
+description = "A lightweight, intuitive templating language designed for interactive use in LLM chat sessions."
 authors = [{ name = "Elifarley", email = "cedarscript@orgecc.com" }]
 readme = "README.md"
 license = {text = "AGPL-3.0"}
@@ -26,9 +26,11 @@ classifiers = [
 keywords = [
     "llm",
     "templating",
-    "code-generation",
+    "productivity",
     "ai-development",
+    "code-generation",
     "prompt-engineering",
+    "prompt-management",
     "language-processing",
     "development-tools"
 ]
