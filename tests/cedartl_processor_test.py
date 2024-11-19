@@ -1,6 +1,5 @@
 from abc import abstractmethod
 from io import TextIOWrapper, FileIO, BufferedRandom, BufferedWriter, BufferedReader
-from typing_extensions import Literal
 
 import pytest
 from importlib.resources.abc import Traversable
@@ -52,7 +51,7 @@ class MockTraversable(Traversable):
     @overload
     @abstractmethod
     def open(
-        self, mode, buffering: Literal[0], encoding: None = None, errors: None = None, newline: None = None
+        self, mode, buffering, encoding: None = None, errors: None = None, newline: None = None
     ) -> FileIO: ...
 
     @overload
@@ -60,7 +59,7 @@ class MockTraversable(Traversable):
     def open(
         self,
         mode,
-        buffering: Literal[-1, 1] = ...,
+        buffering = ...,
         encoding: None = None,
         errors: None = None,
         newline: None = None,
@@ -71,7 +70,7 @@ class MockTraversable(Traversable):
     def open(
         self,
         mode,
-        buffering: Literal[-1, 1] = ...,
+        buffering = ...,
         encoding: None = None,
         errors: None = None,
         newline: None = None,
@@ -82,7 +81,7 @@ class MockTraversable(Traversable):
     def open(
         self,
         mode,
-        buffering: Literal[-1, 1] = ...,
+        buffering = ...,
         encoding: None = None,
         errors: None = None,
         newline: None = None,
