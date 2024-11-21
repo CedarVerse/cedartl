@@ -4,7 +4,7 @@ from typing import Match
 
 
 class CedarTLProcessor:
-    _file_pattern = r'[a-zA-Z0-9/:.]+[a-zA-Z0-9]'
+    _file_pattern = r'[a-zA-Z/:]+[a-zA-Z0-9.:/-]*[a-zA-Z0-9]'
     _special_pattern = r'[$*]\([^)]+\)'
     template_regex = re.compile(
         r'([^\\]?)\\' 
@@ -26,7 +26,7 @@ class CedarTLProcessor:
             Template content or original template command if loading fails
         """
         try:
-            template_path = self.main_template_folder / f"{template_name}.txt"
+            template_path = self.main_template_folder / f"{template_name}.cedartl"
             return template_path.read_text()
         except (OSError, IOError) as e:
             # Log error here
@@ -47,11 +47,12 @@ class CedarTLProcessor:
         def replace_template(match: Match) -> str:
             prev, template_name = match.groups()
             if template_name in self._processing_stack:
-                return f"{prev}(\\{template_name}: recursion aborted)"  # Break recursion by returning original command
+                return f"{prev}\\{template_name}"  # Break recursion by returning original command
 
             self._processing_stack.add(template_name)
             template_content = self.load_template(template_name)
-            print(f'\\{template_name}: {template_content.strip()}')
+            if f"\\{template_name}" != template_content:
+                print(f'[CedarTL] \\{template_name}: {template_content.strip()}')
             result = self.process(prev + template_content)
             self._processing_stack.remove(template_name)
             return result
