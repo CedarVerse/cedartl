@@ -51,8 +51,8 @@ class CedarTLProcessor:
 
             self._processing_stack.add(template_name)
             template_content = self.load_template(template_name)
-            if f"\\{template_name}" != template_content:
-                print(f'[CedarTL] \\{template_name}: {template_content.strip()}')
+            if f"\\{template_name}" != template_content and template_content:
+                print(f'[CedarTL] \\{template_name}: {len(template_content.strip().split(" "))} words')
             result = self.process(prev + template_content)
             self._processing_stack.remove(template_name)
             return result
